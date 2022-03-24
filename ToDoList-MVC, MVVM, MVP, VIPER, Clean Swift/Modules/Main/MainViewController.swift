@@ -7,23 +7,66 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+// MARK: - MainViewProtocol
+protocol MainViewProtocol: AnyObject {
+    func display(_ viewModel: [ArhitectureModel])
+}
 
+// MARK: - MainViewController
+final class MainViewController: UIViewController {
+    
+    // MARK: - Properties
+    private lazy var tableView: UITableView = {
+       let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableView
+    }()
+    
+    private var arhitectureModel: [ArhitectureModel] = []
+    var presenter: MainPresenterProtocol?
+
+    // MARK: - LiаeCicle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewController()
+        presenter?.loadData()
+        
+    }
+}
 
-        // Do any additional setup after loading the view.
+// MARK: - UITableViewDataSource
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arhitectureModel.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = arhitectureModel[indexPath.row].name
+        return cell
     }
-    */
+}
 
+// MARK: - UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - Private methods
+private extension MainViewController {
+    func setupViewController() {
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+        view.backgroundColor = .systemPink
+    }
+}
+
+// MARK: - MainViewProtocol Impl
+extension MainViewController: MainViewProtocol {
+    func display(_ viewModel: [ArhitectureModel]) {
+        self.arhitectureModel = viewModel
+        tableView.reloadData()
+    }
 }

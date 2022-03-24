@@ -5,4 +5,31 @@
 //  Created by Зоригто Бадмаин on 24.03.2022.
 //
 
-import Foundation
+// MARK: - ModuleBuilderProtocol
+protocol ModuleBuilderProtocol {
+    func setupMainViewController() -> MainViewController
+}
+
+// MARK: - ModuleBuilderManager
+final class ModuleBuilderManager {
+    
+    private let networkManager: NetworkableProtocol
+    
+    init() {
+        networkManager = NetworkManager()
+    }
+}
+
+// MARK: - ModuleBuilderProtocol Impl
+extension ModuleBuilderManager: ModuleBuilderProtocol {
+    
+    func setupMainViewController() -> MainViewController {
+        let mainViewController = MainViewController()
+        let mainPresenter = MainPresenter(networkService: networkManager)
+        mainViewController.presenter = mainPresenter
+        mainPresenter.viewController = mainViewController
+        
+        return mainViewController
+    }
+    
+}
