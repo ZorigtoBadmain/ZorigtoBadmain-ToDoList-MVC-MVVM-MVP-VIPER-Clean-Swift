@@ -8,6 +8,7 @@
 // MARK: - ModuleBuilderProtocol
 protocol ModuleBuilderProtocol {
     func setupMainViewController() -> MainViewController
+    func setupMVPViewController() -> MvpViewController
 }
 
 // MARK: - ModuleBuilderManager
@@ -30,6 +31,11 @@ extension ModuleBuilderManager: ModuleBuilderProtocol {
         mainPresenter.viewController = mainViewController
         
         return mainViewController
+    }
+    
+    func setupMVPViewController() -> MvpViewController {
+        let mvpViewController = MvpViewController()
+        return mvpViewController
     }
     
 }

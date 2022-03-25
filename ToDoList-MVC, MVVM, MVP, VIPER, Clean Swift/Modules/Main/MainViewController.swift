@@ -26,6 +26,7 @@ final class MainViewController: UIViewController {
     
     private var arhitectureModel: [ArhitectureModel] = []
     var presenter: MainPresenterProtocol?
+    private var networkService: NetworkableProtocol?
 
     // MARK: - LiаeCicle
     override func viewDidLoad() {
