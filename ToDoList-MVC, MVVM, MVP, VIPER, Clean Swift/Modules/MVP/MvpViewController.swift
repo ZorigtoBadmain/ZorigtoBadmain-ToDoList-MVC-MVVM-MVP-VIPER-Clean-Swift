@@ -5,6 +5,7 @@
 //  Created by Зоригто Бадмаин on 25.03.2022.
 //
 
+import Foundation
 import UIKit
 
 // MARK: - MVPViewProtocol
@@ -17,40 +18,43 @@ final class MvpViewController: UIViewController {
     
     
     // MARK: - IBOutlet
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var backBarItem: UIBarButtonItem!
-    @IBOutlet weak var addBarItem: UIBarButtonItem!
-    @IBOutlet weak var tableView: UITableView!
     
-    private lazy var navBar: UINavigationBar = {
-        let navBar = UINavigationBar()
-        return navBar
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        let mvpNib = UINib(nibName: "MvpTableViewCell", bundle: nil)
+        tableView.register(mvpNib, forCellReuseIdentifier: "MvpTableViewCell")
+        return tableView
     }()
     
     // MARK: - LifeCicle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupNavigationBar()
+        
     }
     
     // MARK: - IBAction
-    @IBAction func closeMvpView(_ sender: UIBarButtonItem) {
-        
-    }
-    
-    @IBAction func addAction(_ sender: UIBarButtonItem) {
-        
-    }
+
 }
 
 // MARK: - Private methods
 private extension MvpViewController {
+    
     func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        let mvpNib = UINib(nibName: "MvpTableViewCell", bundle: nil)
-        tableView.register(mvpNib, forCellReuseIdentifier: "MvpTableViewCell")
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+    }
+    
+    func setupNavigationBar() {
+        title = "MVP"
+        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
+        let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: nil)
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
     }
 }
 
