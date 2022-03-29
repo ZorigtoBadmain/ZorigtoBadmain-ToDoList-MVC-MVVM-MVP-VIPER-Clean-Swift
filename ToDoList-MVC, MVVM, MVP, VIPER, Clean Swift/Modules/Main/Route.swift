@@ -5,4 +5,26 @@
 //  Created by Зоригто Бадмаин on 26.03.2022.
 //
 
-import Foundation
+// MARK: - RouteProtocol
+protocol RouteProtocol: AnyObject {
+    func routeToMvp(from vc: MVPViewProtocol)
+}
+
+// MARK: - Route
+class Route {
+    
+}
+
+// MARK: - RouteProtocol Impl
+extension Route: RouteProtocol {
+    func routeToMvp(from vc: MVPViewProtocol) {
+        let mvpViewController = MvpViewController()
+        if let viewController = vc as? MvpViewController {
+            viewController.present(mvpViewController, animated: true, completion: nil)
+        }
+        
+        
+    }
+    
+    
+}

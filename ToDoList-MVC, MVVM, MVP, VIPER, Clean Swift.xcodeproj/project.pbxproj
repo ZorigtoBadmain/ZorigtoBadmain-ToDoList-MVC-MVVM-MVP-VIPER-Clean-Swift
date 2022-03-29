@@ -21,6 +21,7 @@
 		35921A8527EC752200835EB6 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8427EC752200835EB6 /* MainPresenter.swift */; };
 		35921A8A27EC78CA00835EB6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8927EC78CA00835EB6 /* NetworkService.swift */; };
 		35921A8E27EC7C5700835EB6 /* ModuleBuilderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8D27EC7C5700835EB6 /* ModuleBuilderManager.swift */; };
+		35F570D927EE9EE40004C1F9 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F570D827EE9EE40004C1F9 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		35921A8427EC752200835EB6 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		35921A8927EC78CA00835EB6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		35921A8D27EC7C5700835EB6 /* ModuleBuilderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderManager.swift; sourceTree = "<group>"; };
+		35F570D827EE9EE40004C1F9 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				35921A8127EC74BC00835EB6 /* ArhitectureModel.swift */,
 				35921A7C27EC6A0400835EB6 /* MainViewController.swift */,
 				35921A8427EC752200835EB6 /* MainPresenter.swift */,
+				35F570D827EE9EE40004C1F9 /* Route.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				35921A8E27EC7C5700835EB6 /* ModuleBuilderManager.swift in Sources */,
 				3543FAB127ED44AF00898C86 /* MVPModel.swift in Sources */,
 				3543FAB927ED4B3000898C86 /* MvpTableViewCell.swift in Sources */,
+				35F570D927EE9EE40004C1F9 /* Route.swift in Sources */,
 				35921A7D27EC6A0400835EB6 /* MainViewController.swift in Sources */,
 				35921A8A27EC78CA00835EB6 /* NetworkService.swift in Sources */,
 			);

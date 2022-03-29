@@ -8,6 +8,7 @@
 // MARK: - MainPresenterProtocol
 protocol MainPresenterProtocol: AnyObject {
     func loadData()
+    func routToMvp()
 }
 
 // MARK: - MainPresenter
@@ -25,5 +26,9 @@ extension MainPresenter: MainPresenterProtocol {
     func loadData() {
         let data = networkService.requestData()
         viewController?.display(data)
+    }
+    
+    func routToMvp() {
+        
     }
 }
