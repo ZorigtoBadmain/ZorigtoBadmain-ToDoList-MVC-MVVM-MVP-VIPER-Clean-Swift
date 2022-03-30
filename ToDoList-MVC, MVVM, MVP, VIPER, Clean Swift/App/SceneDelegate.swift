@@ -26,10 +26,9 @@ private extension SceneDelegate {
         window?.windowScene = windowScene
 
         let moduleBuilder = ModuleBuilderManager()
-//        window?.rootViewController = moduleBuilder.setupMainViewController()
-        let viewController = moduleBuilder.setupMVPViewController()
-        let navigation = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navigation
+        let viewController = moduleBuilder.setupMainViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 }

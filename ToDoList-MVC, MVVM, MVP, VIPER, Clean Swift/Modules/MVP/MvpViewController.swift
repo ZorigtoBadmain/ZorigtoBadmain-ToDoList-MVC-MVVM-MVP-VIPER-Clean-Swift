@@ -31,31 +31,12 @@ final class MvpViewController: UIViewController {
     // MARK: - LifeCicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        setupNavigationBar()
+        setupViewController()
         
     }
     
     // MARK: - IBAction
 
-}
-
-// MARK: - Private methods
-private extension MvpViewController {
-    
-    func setupTableView() {
-        view.addSubview(tableView)
-        tableView.frame = view.bounds
-    }
-    
-    func setupNavigationBar() {
-        title = "MVP"
-        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = rightBarButtonItem
-        
-        let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: nil)
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
-    }
 }
 
 // MARK: - MVPViewProtocol Impl
@@ -70,7 +51,7 @@ extension MvpViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MvpTableViewCell", for: indexPath) as! MvpTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MvpTableViewCell", for: indexPath) as? MvpTableViewCell else { fatalError("MvpTableViewCell not found") }
         cell.titleLabel.text = "задача 1"
         return cell
     }
@@ -79,4 +60,24 @@ extension MvpViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MvpViewController: UITableViewDelegate {
     
+}
+
+// MARK: - Private methods
+private extension MvpViewController {
+    
+    func setupViewController() {
+        setupTableView()
+        setupNavigationBar()
+    }
+    
+    func setupTableView() {
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+    }
+    
+    func setupNavigationBar() {
+        title = "MVP"
+        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
 }
