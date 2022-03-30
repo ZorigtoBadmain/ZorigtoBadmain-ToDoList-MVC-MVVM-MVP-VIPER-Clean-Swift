@@ -7,28 +7,54 @@
 
 // MARK: - MainPresenterProtocol
 protocol MainPresenterProtocol: AnyObject {
-    func loadData()
-    func routToMvp()
+    func fetchArchitectures()
+    func fetchArchitecture(by index: Int)
 }
 
 // MARK: - MainPresenter
 final class MainPresenter {
     weak var viewController: MainViewProtocol?
-    private let networkService: NetworkableProtocol
     
-    init(networkService: NetworkableProtocol) {
+    private let networkService: NetworkableProtocol
+    private let moduleBuilder: ModuleBuilderProtocol
+    
+    private var arhitectures: [ArhitectureModel] = []
+    
+    init(networkService: NetworkableProtocol, moduleBuilder: ModuleBuilderProtocol) {
         self.networkService = networkService
+        self.moduleBuilder = moduleBuilder
     }
 }
 
 // MARK: - MainPresenterProtocol Impl
 extension MainPresenter: MainPresenterProtocol {
-    func loadData() {
-        let data = networkService.requestData()
-        viewController?.display(data)
+    func fetchArchitectures() {
+        networkService.request { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.arhitectures = response
+                self?.viewController?.display(response)
+            case .failure(let error):
+                print(error)
+                print(error.localizedDescription)
+            }
+        }
     }
     
-    func routToMvp() {
+    func fetchArchitecture(by index: Int) {
+        let arhitecture = arhitectures[index]
         
+        switch arhitecture.type {
+        case .mvp:
+            let mvpViewController = moduleBuilder.setupMVPViewController()
+            viewController?.routeTo(mvpViewController)
+        case .mvvm:
+            break
+        case .viper:
+            break
+        case .cleanSwift:
+            break
+    }
+    
     }
 }

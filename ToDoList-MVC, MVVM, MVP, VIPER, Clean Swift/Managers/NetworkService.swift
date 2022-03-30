@@ -7,24 +7,23 @@
 
 // MARK: - NetworkableProtocol
 protocol NetworkableProtocol {
-    func requestData() -> [ArhitectureModel]
+    func request(complition: @escaping (Result<[ArhitectureModel], Error>) -> Void)
 }
 
 // MARK: - NetworkManager
 final class NetworkManager {
-    
+    private let successResponse = [
+     ArhitectureModel(id: 1, type: .mvp),
+     ArhitectureModel(id: 2, type: .mvvm),
+     ArhitectureModel(id: 3, type: .viper),
+     ArhitectureModel(id: 4, type: .cleanSwift)
+     ]
 }
 
 // MARK: - NetworkableProtocol Impl
 extension NetworkManager: NetworkableProtocol {
     
-    func requestData() -> [ArhitectureModel] {
-        let result = [
-            ArhitectureModel(id: 1, name: "MVP"),
-            ArhitectureModel(id: 2, name: "MVVM"),
-            ArhitectureModel(id: 3, name: "VIPER"),
-            ArhitectureModel(id: 4, name: "Clean Swift")
-        ]
-        return result
+    func request(complition: @escaping (Result<[ArhitectureModel], Error>) -> Void) {
+        complition(.success(successResponse))
     }
 }

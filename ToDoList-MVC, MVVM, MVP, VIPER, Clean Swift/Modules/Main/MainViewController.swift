@@ -10,6 +10,7 @@ import UIKit
 // MARK: - MainViewProtocol
 protocol MainViewProtocol: AnyObject {
     func display(_ viewModel: [ArhitectureModel])
+    func routeTo(_ viewController: UIViewController)
 }
 
 // MARK: - MainViewController
@@ -24,28 +25,41 @@ final class MainViewController: UIViewController {
         return tableView
     }()
     
-    private var arhitectureModel: [ArhitectureModel] = []
+    private var arhitectures: [ArhitectureModel] = []
+    
     var presenter: MainPresenterProtocol?
-    private var networkService: NetworkableProtocol?
 
     // MARK: - LiаeCicle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
-        presenter?.loadData()
         
     }
 }
 
+// MARK: - MainViewProtocol Impl
+extension MainViewController: MainViewProtocol {
+    func display(_ viewModel: [ArhitectureModel]) {
+        self.arhitectures = viewModel
+        tableView.reloadData()
+    }
+    
+    func routeTo(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
+
+
 // MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arhitectureModel.count
+        return arhitectures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = arhitectureModel[indexPath.row].name
+        cell.textLabel?.text = arhitectures[indexPath.row].type.name
         return cell
     }
 }
@@ -54,22 +68,18 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.fetchArchitecture(by: indexPath.row)
     }
 }
 
 // MARK: - Private methods
 private extension MainViewController {
     func setupViewController() {
+        title = "Архитектуры"
         view.addSubview(tableView)
         tableView.frame = view.bounds
-        view.backgroundColor = .systemPink
+        
+        presenter?.fetchArchitectures()
     }
 }
 
-// MARK: - MainViewProtocol Impl
-extension MainViewController: MainViewProtocol {
-    func display(_ viewModel: [ArhitectureModel]) {
-        self.arhitectureModel = viewModel
-        tableView.reloadData()
-    }
-}

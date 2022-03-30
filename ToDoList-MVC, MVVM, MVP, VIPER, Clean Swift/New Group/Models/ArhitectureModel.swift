@@ -9,5 +9,5 @@ import Foundation
 
 struct ArhitectureModel {
     var id: Int
-    var name: String
+    var type: ArchitectureType
 }

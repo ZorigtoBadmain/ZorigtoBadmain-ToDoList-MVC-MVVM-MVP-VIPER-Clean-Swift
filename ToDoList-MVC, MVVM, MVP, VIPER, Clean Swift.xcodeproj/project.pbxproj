@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		353AF27927ED5BCE0077EB2B /* MvpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AF27827ED5BCE0077EB2B /* MvpViewController.swift */; };
 		3543FAAE27ED449F00898C86 /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543FAAD27ED449F00898C86 /* MVPPresenter.swift */; };
-		3543FAB127ED44AF00898C86 /* MVPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543FAB027ED44AF00898C86 /* MVPModel.swift */; };
 		3543FAB927ED4B3000898C86 /* MvpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543FAB727ED4B3000898C86 /* MvpTableViewCell.swift */; };
 		3543FABA27ED4B3000898C86 /* MvpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3543FAB827ED4B3000898C86 /* MvpTableViewCell.xib */; };
 		3577B14227EC416100E42118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3577B14127EC416100E42118 /* AppDelegate.swift */; };
@@ -19,15 +18,15 @@
 		35921A7D27EC6A0400835EB6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A7C27EC6A0400835EB6 /* MainViewController.swift */; };
 		35921A8227EC74BC00835EB6 /* ArhitectureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8127EC74BC00835EB6 /* ArhitectureModel.swift */; };
 		35921A8527EC752200835EB6 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8427EC752200835EB6 /* MainPresenter.swift */; };
-		35921A8A27EC78CA00835EB6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8927EC78CA00835EB6 /* NetworkService.swift */; };
-		35921A8E27EC7C5700835EB6 /* ModuleBuilderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35921A8D27EC7C5700835EB6 /* ModuleBuilderManager.swift */; };
+		35ACDB2527F3E426002AE161 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ACDB2327F3E426002AE161 /* NetworkService.swift */; };
+		35ACDB2627F3E426002AE161 /* ModuleBuilderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ACDB2427F3E426002AE161 /* ModuleBuilderManager.swift */; };
+		35ACDB2B27F3E517002AE161 /* ArchitectureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ACDB2A27F3E517002AE161 /* ArchitectureType.swift */; };
 		35F570D927EE9EE40004C1F9 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F570D827EE9EE40004C1F9 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		353AF27827ED5BCE0077EB2B /* MvpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvpViewController.swift; sourceTree = "<group>"; };
 		3543FAAD27ED449F00898C86 /* MVPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
-		3543FAB027ED44AF00898C86 /* MVPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPModel.swift; sourceTree = "<group>"; };
 		3543FAB727ED4B3000898C86 /* MvpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvpTableViewCell.swift; sourceTree = "<group>"; };
 		3543FAB827ED4B3000898C86 /* MvpTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MvpTableViewCell.xib; sourceTree = "<group>"; };
 		3577B13E27EC416100E42118 /* ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,8 +38,9 @@
 		35921A7C27EC6A0400835EB6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		35921A8127EC74BC00835EB6 /* ArhitectureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArhitectureModel.swift; sourceTree = "<group>"; };
 		35921A8427EC752200835EB6 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		35921A8927EC78CA00835EB6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		35921A8D27EC7C5700835EB6 /* ModuleBuilderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderManager.swift; sourceTree = "<group>"; };
+		35ACDB2327F3E426002AE161 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift/Managers/NetworkService.swift"; sourceTree = SOURCE_ROOT; };
+		35ACDB2427F3E426002AE161 /* ModuleBuilderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModuleBuilderManager.swift; path = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift/Managers/ModuleBuilderManager.swift"; sourceTree = SOURCE_ROOT; };
+		35ACDB2A27F3E517002AE161 /* ArchitectureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureType.swift; sourceTree = "<group>"; };
 		35F570D827EE9EE40004C1F9 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,10 +58,8 @@
 		3543FAA927ED444100898C86 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
-				3543FAB627ED4B0D00898C86 /* Cell */,
 				3543FAAD27ED449F00898C86 /* MVPPresenter.swift */,
 				353AF27827ED5BCE0077EB2B /* MvpViewController.swift */,
-				3543FAB027ED44AF00898C86 /* MVPModel.swift */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -95,11 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				35921A7F27EC6BE400835EB6 /* App */,
-				35921A8827EC78A600835EB6 /* Managers */,
+				35ACDB1D27F3E33E002AE161 /* Core */,
 				35921A7627EC695D00835EB6 /* Modules */,
-				3577B14A27EC416C00E42118 /* Assets.xcassets */,
-				3577B14C27EC416C00E42118 /* LaunchScreen.storyboard */,
-				3577B14F27EC416C00E42118 /* Info.plist */,
 			);
 			path = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift";
 			sourceTree = "<group>";
@@ -107,7 +102,6 @@
 		35921A7527EC694E00835EB6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				35921A8127EC74BC00835EB6 /* ArhitectureModel.swift */,
 				35921A7C27EC6A0400835EB6 /* MainViewController.swift */,
 				35921A8427EC752200835EB6 /* MainPresenter.swift */,
 				35F570D827EE9EE40004C1F9 /* Route.swift */,
@@ -127,6 +121,9 @@
 		35921A7F27EC6BE400835EB6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				35ACDB1B27F3E2D7002AE161 /* Resourses */,
+				3577B14C27EC416C00E42118 /* LaunchScreen.storyboard */,
+				3577B14F27EC416C00E42118 /* Info.plist */,
 				3577B14127EC416100E42118 /* AppDelegate.swift */,
 				3577B14327EC416100E42118 /* SceneDelegate.swift */,
 			);
@@ -136,10 +133,38 @@
 		35921A8827EC78A600835EB6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				35921A8927EC78CA00835EB6 /* NetworkService.swift */,
-				35921A8D27EC7C5700835EB6 /* ModuleBuilderManager.swift */,
+				35ACDB2427F3E426002AE161 /* ModuleBuilderManager.swift */,
+				35ACDB2327F3E426002AE161 /* NetworkService.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		35ACDB1B27F3E2D7002AE161 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				3577B14A27EC416C00E42118 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		35ACDB1D27F3E33E002AE161 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				35ACDB2927F3E46C002AE161 /* Models */,
+				3543FAB627ED4B0D00898C86 /* Cell */,
+				35921A8827EC78A600835EB6 /* Managers */,
+			);
+			name = Core;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		35ACDB2927F3E46C002AE161 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35921A8127EC74BC00835EB6 /* ArhitectureModel.swift */,
+				35ACDB2A27F3E517002AE161 /* ArchitectureType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,17 +238,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				353AF27927ED5BCE0077EB2B /* MvpViewController.swift in Sources */,
+				35ACDB2627F3E426002AE161 /* ModuleBuilderManager.swift in Sources */,
 				35921A8527EC752200835EB6 /* MainPresenter.swift in Sources */,
 				3577B14227EC416100E42118 /* AppDelegate.swift in Sources */,
 				35921A8227EC74BC00835EB6 /* ArhitectureModel.swift in Sources */,
 				3577B14427EC416100E42118 /* SceneDelegate.swift in Sources */,
 				3543FAAE27ED449F00898C86 /* MVPPresenter.swift in Sources */,
-				35921A8E27EC7C5700835EB6 /* ModuleBuilderManager.swift in Sources */,
-				3543FAB127ED44AF00898C86 /* MVPModel.swift in Sources */,
+				35ACDB2B27F3E517002AE161 /* ArchitectureType.swift in Sources */,
 				3543FAB927ED4B3000898C86 /* MvpTableViewCell.swift in Sources */,
 				35F570D927EE9EE40004C1F9 /* Route.swift in Sources */,
 				35921A7D27EC6A0400835EB6 /* MainViewController.swift in Sources */,
-				35921A8A27EC78CA00835EB6 /* NetworkService.swift in Sources */,
+				35ACDB2527F3E426002AE161 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBWZGWH625;
-				INFOPLIST_FILE = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift/Info.plist";
+				INFOPLIST_FILE = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,7 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBWZGWH625;
-				INFOPLIST_FILE = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift/Info.plist";
+				INFOPLIST_FILE = "ToDoList-MVC, MVVM, MVP, VIPER, Clean Swift/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

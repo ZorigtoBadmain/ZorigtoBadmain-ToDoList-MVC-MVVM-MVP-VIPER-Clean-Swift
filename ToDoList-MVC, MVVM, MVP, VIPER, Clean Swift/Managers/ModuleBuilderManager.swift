@@ -26,7 +26,7 @@ extension ModuleBuilderManager: ModuleBuilderProtocol {
     
     func setupMainViewController() -> MainViewController {
         let mainViewController = MainViewController()
-        let mainPresenter = MainPresenter(networkService: networkManager)
+        let mainPresenter = MainPresenter(networkService: networkManager, moduleBuilder: self)
         mainViewController.presenter = mainPresenter
         mainPresenter.viewController = mainViewController
         
